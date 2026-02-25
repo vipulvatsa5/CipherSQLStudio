@@ -41,20 +41,20 @@ const startServer = async () => {
         
         // Connect to MongoDB first
         await connectDB();
-        console.log('✅ MongoDB Connected');
+        console.log('MongoDB Connected');
 
         // Verify PostgreSQL connection
         const client = await pgPool.connect();
-        console.log('✅ PostgreSQL Connected');
+        console.log('PostgreSQL Connected');
         client.release();
 
         // Start listening ONLY after DBs are confirmed
         app.listen(PORT, () => {
-            console.log(`🚀 Server running on http://localhost:${PORT}`);
+            console.log(`Server running on http://localhost:${PORT}`);
         });
     } catch (err) {
-        console.error('❌ Failed to start server:', err.message);
-        process.exit(1); // Exit if critical DBs aren't available
+        console.error('Failed to start server:', err.message);
+        process.exit(1); 
     }
 };
 
