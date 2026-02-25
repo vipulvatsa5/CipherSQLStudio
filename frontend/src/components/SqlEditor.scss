@@ -1,0 +1,85 @@
+.sql-editor-wrapper {
+
+    background: #0f172a;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    height: 100%;
+
+}
+
+
+/* Header */
+
+.sql-editor-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px 16px;
+
+    background: #020617;
+
+    border-bottom: 1px solid #1e293b;
+
+}
+
+
+.title {
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+}
+
+
+/* Run Button */
+
+.run-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    background: #6366f1;
+
+    border: none;
+
+    color: white;
+
+    padding: 6px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+
+}
+
+.run-btn:hover {
+
+    background: #4f46e5;
+
+}
+
+
+.run-btn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}

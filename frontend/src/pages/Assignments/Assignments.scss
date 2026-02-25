@@ -1,0 +1,75 @@
+$bg-dark: #1a1a1a;
+$row-alt: #2a2a2a;
+$lc-easy: #00af9b;
+$lc-med: #ffb800;
+$lc-hard: #ff2d55;
+
+.leetcode-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .list-controls {
+    margin-bottom: 20px;
+    .search-wrapper {
+      position: relative;
+      width: 300px;
+      .search-icon { position: absolute; left: 10px; top: 10px; color: #8a8a8a; }
+      input {
+        width: 100%;
+        background: #333;
+        border: none;
+        padding: 8px 10px 8px 35px;
+        border-radius: 5px;
+        color: white;
+        outline: none;
+        &:focus { background: #444; }
+      }
+    }
+  }
+}
+
+.problem-table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th {
+    text-align: left;
+    color: #8a8a8a;
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
+
+  tr {
+    &:nth-child(even) { background-color: $row-alt; }
+    &:hover { background-color: #333; }
+  }
+
+  td {
+    padding: 12px 10px;
+    font-size: 0.95rem;
+    color: #eff1f6;
+
+    &.title-cell a {
+      color: #eff1f6;
+      text-decoration: none;
+      font-weight: 500;
+      &:hover { color: #007aff; }
+    }
+
+    &.status-icon.solved { color: #2db55d; }
+    
+    // Difficulty Colors
+    &.easy { color: $lc-easy; }
+    &.medium { color: $lc-med; }
+    &.hard { color: $lc-hard; }
+  }
+}
+
+.error-container {
+    text-align: center;
+    padding: 4rem;
+    color: #f43f5e;
+}

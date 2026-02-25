@@ -1,0 +1,57 @@
+@use 'variables' as *;
+
+@mixin mobile {
+    @media (min-width: 320px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 641px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin large-desktop {
+    @media (min-width: 1281px) {
+        @content;
+    }
+}
+
+@mixin flex-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(99, 102, 241, 0.8);
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: #6366f1; // Use hex to be safe or $primary-color if @use works
+            background-clip: content-box;
+        }
+    }
+}

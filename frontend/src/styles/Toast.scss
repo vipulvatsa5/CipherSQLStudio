@@ -1,0 +1,88 @@
+@use '../styles/variables' as *;
+
+.toast-container {
+    position: fixed;
+    bottom: $spacing-xl;
+    right: $spacing-xl;
+    z-index: $z-toast;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    pointer-events: none; // Allow clicks to pass through container
+}
+
+.toast {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-md;
+    border-radius: $radius-md;
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(12px);
+    border: $glass-border;
+    box-shadow: $shadow-lg;
+    min-width: 300px;
+    max-width: 400px;
+    color: $text-primary;
+    font-size: 0.95rem;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: $secondary-color;
+    }
+
+    &-success::before {
+        background: $accent-success;
+    }
+
+    &-error::before {
+        background: $accent-error;
+    }
+
+    &-warning::before {
+        background: $accent-warning;
+    }
+
+    &-info::before {
+        background: $primary-color;
+    }
+
+    .toast-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+    }
+
+    .toast-content {
+        flex: 1;
+        line-height: 1.4;
+    }
+
+    .toast-close {
+        background: transparent;
+        border: none;
+        color: $text-secondary;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: $transition-base;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: $text-primary;
+        }
+    }
+}

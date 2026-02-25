@@ -1,0 +1,106 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $background-dark;
+    background-image: $background-mesh;
+    background-attachment: fixed; // Keep mesh static while scrolling
+    color: $text-primary;
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// Custom Scrollbar
+html,
+body {
+    @include custom-scrollbar;
+}
+
+* {
+    @include custom-scrollbar;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// Utility classes
+.container {
+    max-width: 1200px; // Restore reasonable width for List page
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    width: 95%;
+}
+
+.container-fluid {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 $spacing-md;
+    width: 100%;
+}
+
+// Utility Classes
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    padding: 0.6rem 1.2rem;
+    border-radius: $radius-md;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: $transition-smooth;
+    outline: none;
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.btn-primary {
+    background: $primary-gradient;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
+
+    &:hover:not(:disabled) {
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        transform: translateY(-1px);
+    }
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: $text-primary;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+
+    &:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+// Page Transitions
+.page-transition {
+    width: 100%;
+}
