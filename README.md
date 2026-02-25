@@ -189,7 +189,7 @@ LLM_API_KEY=
 ---
 
 ## 📸 Screenshots
-```
+
 /screenshots/assignment.png
 <img width="1919" height="926" alt="image" src="https://github.com/user-attachments/assets/b21f18da-a63d-421c-803b-e186a190e37a" />
 
@@ -199,8 +199,6 @@ LLM_API_KEY=
 
 /screenshots/result.png
 <img width="1898" height="940" alt="image" src="https://github.com/user-attachments/assets/3bc84e6a-1b28-40e7-bf03-c56c7e3a82a9" />
-
-```
 
 ---
 
