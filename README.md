@@ -215,9 +215,6 @@ LLM_API_KEY=
 
 Vipul Kumar
 
-Computer Science Student
-Amity University Madhya Pradesh
-
 GitHub:
 https://github.com/vipulvatsa5
 
